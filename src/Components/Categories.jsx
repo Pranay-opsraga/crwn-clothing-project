@@ -3,7 +3,7 @@ import categories from "./Categories-array"
 
 const Categories = () => {
     return (
-        <div className="w-full grid grid-cols-6 gap-5 p-2 mt-4 ">
+        <div className="w-full grid grid-cols-6 gap-5 p-2 ">
             {categories.map(({ id, title, imageUrl }) => (
                 <div
                     key={id}
