@@ -14,7 +14,7 @@ const Categories = () => {
                         className="absolute inset-0 bg-cover bg-center transition-transform duration-[6000ms] ease-out hover:scale-110"
                         style={{ backgroundImage: `url(${imageUrl})` }}>
                     </div>
-                    <div className=" px-6 py-4 border border-gray-400 border-2 bg-white text-center cursor-pointer hover:opacity-90 opacity-70">
+                    <div className=" px-6 py-4 border border-gray-400 border-2 bg-white text-center  hover:opacity-90 opacity-70">
                         <h2 className="text-xl font-bold text-gray-600 mb-1">{title}</h2>
                         <p className="text-base font-light text-gray-500">Shop Now</p>
                     </div>
