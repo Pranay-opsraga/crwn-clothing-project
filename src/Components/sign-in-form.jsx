@@ -12,7 +12,7 @@ const SignInForm = () => {
     const { email, password } = formFields;
 
     const handleSubmit = async (event) => {
-        event.preventDefault();
+        event.preventDefault()
         try {
             const { user } = await signInAuthUserWithEmailAndPassword(email, password);
             setFormFields(defaultFormFields);

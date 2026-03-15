@@ -3,9 +3,13 @@ import { Outlet, Link } from "react-router-dom"
 import CrwnLogo from "../assets/crown.svg?react"
 import { UserContext } from "../contexts/user.contexts"
 import { signOutUser } from "../utils/firebase/firebase.utils";
+import CartIcon from "../Components/Cart-icon";
+import CartDropdown from "../Components/cart-dropdown";
+import { CartContext } from "../contexts/cart-context";
 
 const NavBar = () => {
     const { currentUser } = useContext(UserContext);
+    const { isCartOpen } = useContext(CartContext);
     const signOutHandler = async () => {
         await signOutUser();
 
@@ -13,7 +17,7 @@ const NavBar = () => {
 
     return (
         <>
-            <div className="flex justify-between p-4 mb-2 mt-2">
+            <div className="flex justify-between p-4 mb-2 mt-2 sticky top-0 bg-white z-40">
                 <Link className="logo-container" to="/">
                     <div>
                         <CrwnLogo className="logo" />
@@ -32,7 +36,9 @@ const NavBar = () => {
                             SIGN IN
                         </Link>
                     )}
+                    <CartIcon />
                 </div>
+                {isCartOpen && <CartDropdown />}
             </div>
             <Outlet />
         </>
