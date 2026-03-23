@@ -1,18 +1,20 @@
-import SHOP_DATA from "../shop-data";
-import { ProductContext } from "../contexts/product";
-import { useContext } from "react";
-import ProductCard from "../Components/product-card";
+import { useContext, Fragment } from "react";
+import { ProductContext } from "../contexts/product-context";
+import ProductPreview from "../Components/Products-preview";
+
 const Shop = () => {
-    const { Products } = useContext(ProductContext);
+    const { categoriesMap } = useContext(ProductContext);
+
     return (
-        <div className="mt-2 grid grid-cols-4 gap-5 ml-2 mr-2">
-            {SHOP_DATA.map((product) => {
-                return (
-                    <ProductCard key={product.id} {...product} />
-                )
-            })}
-        </div>
-    )
-}
+        <Fragment>
+            {Object.keys(categoriesMap).map((title) => (
+                <Fragment key={title}>
+                    <ProductPreview title={title} products={categoriesMap[title]} />
+
+                </Fragment>
+            ))}
+        </Fragment>
+    );
+};
 
 export default Shop;

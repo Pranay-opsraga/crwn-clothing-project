@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom'
 import './index.css'
 import App from './App.jsx'
 import { UserProvider } from './contexts/user.contexts'
-import { ProductProvider } from './contexts/product.jsx'
+import { ProductProvider } from './contexts/product-context.jsx'
 import CartProvider from './contexts/cart-context.jsx'
 
 
