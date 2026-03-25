@@ -13,8 +13,8 @@ const CategoryPage = () => {
     }, [category, categoriesMap]);
 
     return (
-        <div className="mb-4 mt-10">
-            <span className="text-3xl font-bold">{category.toUpperCase()}</span>
+        <div className="mb-4 mt-10 text-center">
+            <span className="text-3xl  font-bold">{category.toUpperCase()}</span>
             <div className="mt-2 grid grid-cols-4 gap-5 ml-2 mr-2 mb-4">
                 {products.map((product) => (
                     <ProductCard key={product.id} {...product} />

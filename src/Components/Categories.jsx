@@ -1,7 +1,9 @@
 import categories from "./Categories-array"
+import { useNavigate } from "react-router-dom";
 
 
 const Categories = () => {
+    const navigate = useNavigate();
     return (
         <div className="w-full grid grid-cols-6 gap-5 p-2 ">
             {categories.map(({ id, title, imageUrl }) => (
@@ -15,8 +17,8 @@ const Categories = () => {
                         style={{ backgroundImage: `url(${imageUrl})` }}>
                     </div>
                     <div className=" px-6 py-4 border border-gray-400 border-2 bg-white text-center  hover:opacity-90 opacity-70">
-                        <h2 className="text-xl font-bold text-gray-600 mb-1">{title}</h2>
-                        <p className="text-base font-light text-gray-500">Shop Now</p>
+                        <h2 className="text-xl font-bold text-gray-600 mb-1 cursor-pointer">{title}</h2>
+                        <span onClick={() => navigate(`/shop/${title}`)} className="text-base font-light text-gray-500 cursor-pointer">Shop Now</span>
                     </div>
                 </div>
             ))}

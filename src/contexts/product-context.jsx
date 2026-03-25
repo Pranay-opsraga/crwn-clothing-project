@@ -10,7 +10,7 @@ const ProductProvider = ({ children }) => {
     useEffect(() => {
         const fetchProducts = async () => {
             const categoriesMap = await getCollectionAndDocuments('categories');
-            console.log(categoriesMap);
+
             setCategoriesMap(categoriesMap);
         };
         fetchProducts();
