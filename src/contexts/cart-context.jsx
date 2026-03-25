@@ -44,13 +44,21 @@ export const CartContext = createContext({
 
 const CartProvider = ({ children }) => {
     const [isCartOpen, setIsCartOpen] = useState(false);
-    const [cartItems, setCartItems] = useState([]);
+    const [cartItems, setCartItems] = useState(() => {
+        try {
+            const saved = localStorage.getItem('cartItems');
+            return saved ? JSON.parse(saved) : [];
+        } catch {
+            return [];
+        }
+    });
     const [cartCount, setCartCount] = useState(0);
     const [cartTotal, setCartTotal] = useState(0);
 
     useEffect(() => {
         const newCartCount = cartItems.reduce((total, item) => total + item.quantity, 0);
         setCartCount(newCartCount);
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
     }, [cartItems])
 
 
