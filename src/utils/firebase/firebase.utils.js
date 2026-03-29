@@ -7,8 +7,8 @@ import { getFirestore, doc , getDoc , setDoc , collection , writeBatch , getDocs
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCJ5JMFC6b09gXB3PKROMldOB9_PBnVYUs",
-  authDomain: "crwn-clothing-db-5302d.firebaseapp.com",
+  apiKey: "[GCP_API_KEY]",
+  authDomain: "crwn-clothing-v01.netlify.app",
   projectId: "crwn-clothing-db-5302d",
   storageBucket: "crwn-clothing-db-5302d.firebasestorage.app",
   messagingSenderId: "971970463175",
